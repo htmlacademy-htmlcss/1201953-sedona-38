@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Андрей Шишкин](https://up.htmlacademy.ru/htmlcss/38/user/1201953).
-* Наставник: `Неизвестно`.
+* Наставник: [Андрей Грачев](https://htmlacademy.ru/profile/angra).
 
 ---
 
