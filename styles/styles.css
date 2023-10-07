@@ -14,7 +14,7 @@
   font-display: swap;
 }
 
-html{
+html {
   height: 100%;
 }
 
@@ -25,43 +25,49 @@ body {
   font-weight: 400;
   font-style: normal;
   color: #000000;
-  background-color: #ffffff;
-  margin: 0 auto;
+  background-color: #f2f2f2;
+  margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  width: 1200px;
 }
 
-.page-main{
+.page-wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.20);
+}
+
+.page-main {
   flex-grow: 1;
 }
 
-.main-header{
+.main-header {
   width: 1060px;
   margin: 0 auto;
   display: flex;
 }
 
 /*navigation*/
-.logo-link{
+.logo-link {
   margin-right: 28px;
 }
 
-.navigation-page{
+.navigation-page {
   display: flex;
   align-items: center;
-  width: 892px;
+  flex-basis: 892px;
 }
 
-.navigation-list{
-  width: 460px;
+.navigation-list {
+  flex-basis: 460px;
   margin: 0;
   padding: 0;
 }
 
-.navigation-user{
-  width: 150px;
+.navigation-user {
+  flex-basis: 150px;
   margin-left: auto;
   margin-right: 20px;
 }
@@ -105,7 +111,7 @@ body {
     center;
 }
 
-.image-welcome-sedona{
+.image-welcome-sedona {
   display: block;
   margin: 0 auto;
 }
@@ -135,22 +141,27 @@ body {
 
 /*advantages and services*/
 .advantages-list,
-.service-list{
+.service-list {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
 }
 
-.advantages-item-large{
+.advantages-item-large {
   display: flex;
 }
 
 .advantages-large-wrapper,
 .advantages-item + .advantages-item:not(:last-child),
-.service-item{
-  width: 230px;
+.service-item {
+  flex-basis: 400px;
   padding: 0 85px;
+  box-sizing: border-box;
+}
+
+.advantages-item-large:last-child .advantages-image {
+  order: -1;
 }
 
 .advantages-title,
@@ -220,17 +231,17 @@ body {
 }
 
 /*contacts*/
-.contacts-wrapper{
+.contacts-wrapper {
   display: flex;
   width: 1060px;
   margin: 0 auto;
-  justify-content: space-between;
 }
 
-.social-list{
-  width: 200px;
+.social-list {
+  flex-basis: 142px;
   padding: 0;
   margin: 0;
+  margin-right: 236.5px;
 }
 
 .phone-number {
@@ -238,6 +249,11 @@ body {
   font-size: 40px;
   line-height: 40px;
   text-decoration: none;
+}
+
+.htmlacademy-link {
+  flex-basis: 115px;
+  margin-left: auto;
 }
 
 /*catalog page*/
@@ -257,6 +273,38 @@ body {
   background-size: cover;
   background-position: center;
   color: #ffffff;
+}
+
+.filter-form {
+  display: flex;
+  width: 1060px;
+  margin: 0 auto;
+}
+
+.catalog-filter-list {
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-filter-group {
+  flex-basis: 150px;
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-filter-group:nth-child(1) {
+  margin-right: 70px;
+}
+
+.catalog-filter-group:last-of-type {
+  flex-basis: 288px;
+  margin-right: 70px;
+  margin-left: auto;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .inner-header {
