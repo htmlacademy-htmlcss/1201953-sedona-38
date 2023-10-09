@@ -21,10 +21,53 @@ body {
   font-weight: 400;
   font-style: normal;
   color: #000000;
+  background-color: #f2f2f2;
+  margin: 0;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
   background-color: #ffffff;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.20);
+}
+
+.page-main {
+  flex-grow: 1;
+}
+
+.main-header {
+  width: 1060px;
+  margin: 0 auto;
+  display: flex;
 }
 
 /*navigation*/
+.logo-link {
+  margin-right: 28px;
+}
+
+.navigation-page {
+  display: flex;
+  align-items: center;
+  flex-basis: 892px;
+}
+
+.navigation-list {
+  flex-basis: 460px;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-user {
+  flex-basis: 150px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
 .navigation-link {
   color: inherit;
   font-size: 20px;
@@ -34,8 +77,16 @@ body {
   text-decoration: none;
 }
 
+.favorite-count {
+  font-size: 10px;
+  line-height: 10px;
+  color: #ffffff;
+  background-color: #7db54f;
+}
+
 .navigation-button {
   text-decoration: none;
+  width: 160px;
 }
 
 /*link and button wrapper*/
@@ -63,6 +114,11 @@ body {
     center;
 }
 
+.image-welcome-sedona {
+  display: block;
+  margin: 0 auto;
+}
+
 /*sections start bold text*/
 .defenition-sedona,
 .service-title,
@@ -86,7 +142,31 @@ body {
   text-align: center;
 }
 
-/*advantages*/
+/*advantages and services*/
+.advantages-list,
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.advantages-item-large {
+  display: flex;
+}
+
+.advantages-large-wrapper,
+.advantages-item + .advantages-item:not(:last-child),
+.service-item {
+  flex-basis: 400px;
+  padding: 0 85px;
+  box-sizing: border-box;
+}
+
+.advantages-item-large:last-child .advantages-image {
+  order: -1;
+}
+
 .advantages-title,
 .service-subtitle {
   font-size: 24px;
@@ -129,6 +209,7 @@ body {
 .button-search {
   font-size: 20px;
   line-height: 36px;
+  text-decoration: none;
 }
 
 /*newsletter*/
@@ -154,11 +235,30 @@ body {
 }
 
 /*contacts*/
+.contacts-wrapper {
+  display: flex;
+  width: 1060px;
+  margin: 0 auto;
+}
+
+.social-list {
+  flex-basis: 200px;
+  padding: 0;
+  margin: 0;
+  margin-right: 178.5px;
+}
+
 .phone-number {
   color: inherit;
   font-size: 40px;
   line-height: 40px;
   text-decoration: none;
+  max-width: 400px;
+  margin-right: auto;
+}
+
+.htmlacademy-link {
+  flex-basis: 115px;
 }
 
 /*catalog page*/
@@ -180,10 +280,61 @@ body {
   color: #ffffff;
 }
 
+.filter-wrapper {
+  padding: 0 70px;
+}
+
+.filter-form {
+  display: flex;
+}
+
+.catalog-filter-list {
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-filter-group {
+  flex-basis: 160px;
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-filter-group:nth-child(1) {
+  margin-right: 60px;
+}
+
+.catalog-filter-group:last-of-type {
+  flex-basis: 288px;
+  margin-right: 70px;
+  margin-left: auto;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .inner-header {
   font-size: 60px;
   line-height: 78px;
   font-weight: 700;
+}
+
+.catalog-wrapper {
+  padding: 0 70px;
+}
+
+.hotel-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.hotel-item {
+  flex-basis: 300px;
+  padding: 0 20px;
 }
 
 .catalog-filter-title {
@@ -198,12 +349,14 @@ body {
 
 .button-apply {
   background-color: #82b3d3;
+  width: 191px;
 }
 
 .button-reset {
   outline: none;
   background: transparent;
   border: none;
+  width: 191px;
 }
 
 /*hotel search result*/
