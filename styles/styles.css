@@ -77,6 +77,13 @@ body {
   text-decoration: none;
 }
 
+.favorite-count {
+  font-size: 10px;
+  line-height: 10px;
+  color: #ffffff;
+  background-color: #7db54f;
+}
+
 .navigation-button {
   text-decoration: none;
   width: 160px;
@@ -202,6 +209,7 @@ body {
 .button-search {
   font-size: 20px;
   line-height: 36px;
+  text-decoration: none;
 }
 
 /*newsletter*/
