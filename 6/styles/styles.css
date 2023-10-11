@@ -382,6 +382,9 @@ body {
 
 .htmlacademy-link {
   display: block;
+  background-image: url("../images/html-academy.svg");
+  background-repeat: no-repeat;
+  background-position: center;
   min-width: 115px;
   min-height: 44px;
 }
@@ -417,7 +420,6 @@ body {
   display: block;
 }
 
-
 /*filter*/
 .filter-wrapper {
   background-color: #82b3d3;
@@ -442,10 +444,19 @@ body {
   list-style-type: none;
 }
 
+.catalog-filter-item {
+  margin-bottom: 16px;
+}
+
+.catalog-filter-item:last-child {
+  margin-bottom: 0;
+}
+
 .catalog-filter-group {
   flex-basis: 160px;
   margin: 0;
   padding: 0;
+  border: none;
 }
 
 .catalog-filter-group:nth-child(1) {
@@ -462,6 +473,7 @@ body {
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
+  margin-bottom: 32px;
 }
 
 .catalog-search-description {
@@ -493,6 +505,8 @@ body {
   line-height: 23px;
 }
 
+
+
 /*hotel search result*/
 .catalog-wrapper {
   padding: 50px 70px 60px;
@@ -511,6 +525,8 @@ body {
   background-color: #e5e5e5;
   color: #333333;
   border-radius: 4px;
+  width: 252px;
+  box-sizing: border-box;
 }
 
 .view-filter-list {
@@ -549,10 +565,25 @@ body {
 .hotel-item {
   flex-basis: 300px;
   padding: 0 20px;
+  display: grid;
+  grid-template-columns: 140px 140px;
+  grid-template-rows: auto auto 37px 37px;
+  align-items: center;
+  gap: 16px;
 }
 
 .hotel-link {
   text-decoration: none;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.hotel-image{
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
 }
 
 .hotel-title {
@@ -560,6 +591,7 @@ body {
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
+  margin: 0;
 }
 
 .hotel-type,
@@ -567,6 +599,16 @@ body {
   color: #333333;
   font-size: 18px;
   line-height: 21px;
+}
+
+.hotel-price{
+  text-align: end;
+}
+
+.hotel-more-link{
+  text-align: center;
+  padding: 8px 0;
+  text-decoration: none;
 }
 
 .hotel-favorite-button {
@@ -581,6 +623,9 @@ body {
   font-size: 18px;
   line-height: 20px;
   text-transform: uppercase;
+  background-color: #f2f2f2;
+  padding: 8px 0;
+  text-align: center;
 }
 
 /*pagination*/
