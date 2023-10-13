@@ -534,6 +534,7 @@ body {
   z-index: 1;
   color: #000000;
   align-self: center;
+  opacity: 0.3;
 }
 
 .button-wrapper {
