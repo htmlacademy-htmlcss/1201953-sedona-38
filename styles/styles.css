@@ -646,6 +646,7 @@ body {
 .hotel-image {
   width: 100%;
   height: auto;
+  object-fit: scale-down;
   margin-bottom: 16px;
 }
 
