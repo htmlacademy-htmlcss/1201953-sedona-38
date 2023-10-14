@@ -733,6 +733,14 @@ body {
   padding: 0;
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 500px;
+}
+
+.pagination-item-current a {
+  background-color: #f2f2f2;
+  color: #000000;
 }
 
 .pagination-link {
@@ -751,22 +759,9 @@ body {
   border-radius: 4px;
 }
 
-.pagination-item-current a {
-  background-color: #f2f2f2;
-  color: #000000;
-}
-
 .pagination-link-more {
   background-color: #ffffff;
   color: #000000;
-}
-
-.pagination-item {
-  margin-right: 8px;
-}
-
-.pagination-item:last-child {
-  margin-right: 0;
 }
 
 /*newsletter catalog*/
