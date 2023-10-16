@@ -110,17 +110,19 @@
               </fieldset>
               <fieldset class="catalog-filter-group">
                 <legend class="catalog-filter-title">Стоимость, &#8381;</legend>
-                <div class="range">
-                  <label class="range-title">
-                    <span class="range-signature">от</span>
-                    <input class="range-input" type="text" name="price-from" id="range-from" value="0">
-                  </label>
-                </div>
-                <div class="range">
-                  <label class="range-title">
-                    <span class="range-signature">до</span>
-                    <input class="range-input" type="text" name="price-before" id="range-before" value="9000">
-                  </label>
+                <div class="range-container">
+                  <div class="range">
+                    <label class="range-title">
+                      <span class="range-signature">от</span>
+                      <input class="range-input range-input-from" type="text" name="price-from" id="range-from" value="0">
+                    </label>
+                  </div>
+                  <div class="range">
+                    <label class="range-title">
+                      <span class="range-signature">до</span>
+                      <input class="range-input range-input-before" type="text" name="price-before" id="range-before" value="9000">
+                    </label>
+                  </div>
                 </div>
               </fieldset>
               <div class="button-wrapper">
@@ -139,7 +141,7 @@
                 <option>По названию</option>
               </select>
               <ul class="view-filter-list">
-                <li class="view-filter-item">
+                <li class="view-filter-item view-filter-item-current">
                   <a class="view-filter-link" href="#">
                     <span class="visually-hidden">Отображение гостиниц плиткой</span>
                   </a>
@@ -168,7 +170,7 @@
                 <span class="hotel-price">От 4000 &#8381;</span>
                 <a class="button hotel-more-link" href="#">Подробнее</a>
                 <button class="button hotel-favorite-button" type="button">В избранное</button>
-                <div class="hotel-stars">
+                <div class="hotel-stars hotel-stars-4">
                   <span class="visually-hidden">4 звезды</span>
                 </div>
                 <span class="hotel-rating">Рейтинг: 8,5</span>
@@ -183,7 +185,7 @@
                 <span class="hotel-price">От 2500 &#8381;</span>
                 <a class="button hotel-more-link" href="#">Подробнее</a>
                 <button class="button hotel-favorite-button favorite" type="button">В избранном</button>
-                <div class="hotel-stars">
+                <div class="hotel-stars hotel-stars-3">
                   <span class="visually-hidden">3 звезды</span>
                 </div>
                 <span class="hotel-rating">Рейтинг: 6,9</span>
@@ -198,7 +200,7 @@
                 <span class="hotel-price">От 5000 &#8381;</span>
                 <a class="button hotel-more-link" href="#">Подробнее</a>
                 <button class="button hotel-favorite-button" type="button">В избранное</button>
-                <div class="hotel-stars">
+                <div class="hotel-stars hotel-stars-4">
                   <span class="visually-hidden">4 звезды</span>
                 </div>
                 <span class="hotel-rating">Рейтинг: 9,2</span>
@@ -213,7 +215,7 @@
                 <span class="hotel-price">От 1500 &#8381;</span>
                 <a class="button hotel-more-link" href="#">Подробнее</a>
                 <button class="button hotel-favorite-button" type="button">В избранное</button>
-                <div class="hotel-stars">
+                <div class="hotel-stars hotel-stars-2">
                   <span class="visually-hidden">2 звезды</span>
                 </div>
                 <span class="hotel-rating">Рейтинг: 5,0</span>
