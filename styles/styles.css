@@ -907,16 +907,16 @@ body {
 :active*/
 
 /*Навигационные кнопки*/
-.navigation-link:focus:not(.navigation-current) {
+.navigation-link:focus {
   background-color: #dcdcdc;
   outline: none;
 }
 
-.navigation-link:hover:not(.navigation-current) {
+.navigation-link:hover {
   background-color: #dcdcdc;
 }
 
-.navigation-link:active:not(.navigation-current) {
+.navigation-link:active {
   opacity: 0.3;
   background-color: transparent;
 }
@@ -1017,8 +1017,9 @@ body {
   border-color: #000000;
 }
 /*Кнопки пагинации*/
-.pagination-link:focus-visible:not(.pagination-item-current){
+.pagination-link:not(.pagination-item-current):focus-visible{
   border: 1px solid #82b3d3;
   outline: none;
   background-color: #68a2ca;
+  padding: 11px 0;
 }
