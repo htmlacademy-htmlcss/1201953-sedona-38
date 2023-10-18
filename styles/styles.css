@@ -123,7 +123,6 @@ body {
 }
 
 .favorite-count {
-  display: inline-block;
   font-size: 10px;
   line-height: 10px;
   color: #ffffff;
@@ -408,9 +407,12 @@ body {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   min-width: 452px;
+  box-sizing: border-box;
 }
 
 .button-subscribe {
+  font-size: 20px;
+  line-height: 36px;
   background-color: #82b3d3;
   padding: 8px 50px;
   border-radius: 0;
@@ -443,23 +445,17 @@ body {
   padding: 13px 10px;
   min-width: 24px;
   min-height: 18px;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
 }
 
-.social-link-vk {
-  background-image: url("../images/icons/icon-vk.svg");
-  background-size: 24px 14px;
-}
-
-.social-link-telegram {
-  background-image: url("../images/icons/icon-telegram.svg");
-  background-size: 18px 15px;
-}
-
-.social-link-youtube {
-  background-image: url("../images/icons/icon-youtube.svg");
-  background-size: 22px 17px;
+.social-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  fill: #83b3d3;
 }
 
 .phone-number {
@@ -833,8 +829,9 @@ body {
 }
 
 .hotel-rating {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 20px;
+  color: #333333;
   text-transform: uppercase;
   background-color: #f2f2f2;
   padding: 8px 0;
@@ -907,7 +904,7 @@ body {
 :active*/
 
 /*Навигационные кнопки*/
-.navigation-link:focus {
+.navigation-link:focus-visible {
   background-color: #dcdcdc;
   outline: none;
 }
@@ -963,7 +960,7 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
-/*Зеленые кнопки*/
+/*Поведение зеленых кнопок*/
 .hotel-favorite-button.favorite:focus-visible {
   background-color: #6c9e42;
   outline: none;
@@ -978,7 +975,7 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
-/*Кнопки с прозрачным фоном*/
+/*Поведение кнопок с прозрачным фоном*/
 .button-reset:focus-visible {
   border-radius: 4px;
   outline: 3px solid #83B3D3;
@@ -993,7 +990,7 @@ body {
   opacity: 1;
 }
 
-/*Выпадающий список*/
+/*Поведение выпадающий список*/
 .catalog-sorting-list:focus-visible {
   border-color: #68a2ca;
   outline: none;
@@ -1003,7 +1000,7 @@ body {
   border-color: #68a2ca;
 }
 
-/*Фильтр показа карточек*/
+/*Поведение фильтра показа карточек*/
 .view-filter-link:focus-visible {
   border-color: #68a2ca;
   outline: none;
@@ -1016,10 +1013,23 @@ body {
 .view-filter-link:active {
   border-color: #000000;
 }
-/*Кнопки пагинации*/
-.pagination-link:not(.pagination-item-current):focus-visible{
-  border: 1px solid #82b3d3;
-  outline: none;
+
+/*Поведение кнопок пагинации*/
+.pagination-link:not(.pagination-item-current):focus-visible {
+  outline: 1px solid #82b3d3;
+  outline-offset: -1px;
   background-color: #68a2ca;
-  padding: 11px 0;
+}
+
+/*Поведение ссылок на соц. сети*/
+.social-link:focus-visible {
+  outline: none;
+}
+
+.social-link:focus-visible .social-icon {
+  fill: #68a2ca;
+}
+
+.social-link:hover .social-icon {
+  fill: #68a2ca;
 }
