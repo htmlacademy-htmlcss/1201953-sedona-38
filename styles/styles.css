@@ -255,14 +255,14 @@ body {
   content: "";
   position: absolute;
   height: 0;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.30);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   left: 170px;
   right: 170px;
   top: 188px;
 }
 
 .advantages-item-large .advantages-title::after {
-  border-bottom: 2px solid rgba(255, 255, 255, 0.30);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .advantages-title {
@@ -469,12 +469,20 @@ body {
 
 .htmlacademy-link {
   display: block;
-  background-image: url("../images/html-academy.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
   min-width: 115px;
   min-height: 44px;
   max-width: 140px;
+}
+
+.htmlacademy-icon {
+  fill: #000000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
 }
 
 /*catalog page*/
@@ -498,28 +506,30 @@ body {
   margin-bottom: 40px;
 }
 
+.breadcrumbs-item {
+  position: relative;
+  margin-right: 28px;
+}
+
+.breadcrumbs-item:first-child {
+  line-height: 0;
+}
+
 .breadcrumbs-link {
   font-size: 16px;
   color: #ffffff;
   text-decoration: none;
   min-width: 12px;
   min-height: 12px;
-  margin-right: 28px;
   display: block;
 }
 
-.breadcrumbs-item:last-child .breadcrumbs-link {
+.breadcrumbs-item:last-child {
   margin-right: 0;
 }
 
-.breadcrumbs-link-home {
-  background-image: url("../images/icons/icon-breadcrumbs-home.svg");
-  background-position: center;
-  background-size: 12px 12px;
-}
-
-.breadcrumbs-item {
-  position: relative;
+.breadcrumbs-icon {
+  fill: #ffffff;
 }
 
 .breadcrumbs-item + .breadcrumbs-item::before {
@@ -850,9 +860,10 @@ body {
   max-width: 500px;
 }
 
-.pagination-item-current a {
+.pagination-link.pagination-link-current {
   background-color: #f2f2f2;
   color: #000000;
+  cursor: default;
 }
 
 .pagination-link {
@@ -874,6 +885,7 @@ body {
 .pagination-link-more {
   background-color: #ffffff;
   color: #000000;
+  cursor: default;
 }
 
 /*newsletter catalog*/
@@ -917,7 +929,6 @@ body {
   opacity: 0.3;
   background-color: transparent;
 }
-
 
 /*Поведение коричневых кнопок*/
 .navigation-button:focus-visible,
@@ -978,7 +989,7 @@ body {
 /*Поведение кнопок с прозрачным фоном*/
 .button-reset:focus-visible {
   border-radius: 4px;
-  outline: 3px solid #83B3D3;
+  outline: 3px solid #83b3d3;
 }
 
 .button-reset:hover {
@@ -1015,10 +1026,22 @@ body {
 }
 
 /*Поведение кнопок пагинации*/
-.pagination-link:not(.pagination-item-current):focus-visible {
+.pagination-link:focus-visible {
   outline: 1px solid #82b3d3;
   outline-offset: -1px;
   background-color: #68a2ca;
+}
+
+.pagination-link:hover:not(.pagination-link.pagination-link-current):not(.pagination-link.pagination-link-more) {
+  outline: 1px solid #82b3d3;
+  outline-offset: -1px;
+  background-color: #68a2ca;
+}
+
+.pagination-link:active:not(.pagination-link.pagination-link-current):not(.pagination-link.pagination-link-more) {
+  outline: none;
+  background-color: #82b3d3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /*Поведение ссылок на соц. сети*/
@@ -1032,4 +1055,61 @@ body {
 
 .social-link:hover .social-icon {
   fill: #68a2ca;
+}
+
+/*Поведение номера телефона*/
+.phone-number:focus-visible{
+  outline: none;
+  color: #756157;
+}
+
+.phone-number:hover{
+  color: #756157;
+}
+
+.phone-number:active{
+  color: rgba(117, 97, 87, 0.3)
+}
+
+/*Поведение логотипа создателя сайта*/
+.htmlacademy-link:focus-visible {
+  outline: none;
+}
+
+.htmlacademy-link:focus-visible .htmlacademy-icon{
+  fill: #756157;
+}
+
+.htmlacademy-link:hover .htmlacademy-icon{
+  fill: #756157;
+}
+
+.htmlacademy-link:active .htmlacademy-icon{
+  fill: rgba(117, 97, 87, 0.3);
+}
+
+/*Поведение хлебных крошек*/
+.breadcrumbs-link:focus-visible {
+  color: inherit;
+  outline: none;
+}
+
+.breadcrumbs-link:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs-link:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.breadcrumbs-link:focus-visible .breadcrumbs-icon{
+  fill: #ffffff;
+}
+
+.breadcrumbs-link:hover .breadcrumbs-icon{
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs-link:active .breadcrumbs-icon{
+  fill: rgba(255, 255, 255, 0.3);
 }
