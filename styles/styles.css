@@ -44,18 +44,22 @@ body {
   width: 1060px;
   margin: 0 auto;
   display: flex;
+  position: relative;
 }
 
 .logo-link {
-  margin-right: 28px;
   max-width: 140px;
   overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .navigation-page {
   display: flex;
   align-items: flex-start;
   flex-basis: 892px;
+  margin-left: 168px;
 }
 
 .navigation-list {
@@ -73,6 +77,19 @@ body {
   margin-right: 20px;
 }
 
+.navigation-user .navigation-item:first-child .navigation-link {
+  background-image: url("../images/icons/icon-search.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.navigation-user .navigation-item:last-child .navigation-link {
+  background-image: url("../images/icons/icon-favorites.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
 .navigation-link {
   display: block;
   color: inherit;
@@ -87,13 +104,35 @@ body {
 .navigation-user .navigation-link {
   min-width: 20px;
   min-height: 20px;
+  padding: 22px 12px;
+}
+
+.navigation-current {
+  position: relative;
+  cursor: default;
+}
+
+.navigation-current::after {
+  position: absolute;
+  content: "";
+  height: 0;
+  left: 16px;
+  right: 16px;
+  top: 63px;
+  border-bottom: 2px solid #756257;
 }
 
 .favorite-count {
+  display: inline-block;
   font-size: 10px;
   line-height: 10px;
   color: #ffffff;
   background-color: #7db54f;
+  border-radius: 10px;
+  padding: 5px;
+  position: absolute;
+  left: 20px;
+  top: 11px;
 }
 
 .navigation-button {
@@ -106,6 +145,7 @@ body {
 
 /*link and button wrapper*/
 .button {
+  display: inline-block;
   font-family: inherit;
   font-size: 16px;
   font-weight: 700;
@@ -115,6 +155,7 @@ body {
   background-color: #756157;
   border-radius: 4px;
   border: none;
+  cursor: pointer;
 }
 
 /*index page*/
@@ -194,6 +235,7 @@ body {
   padding: 102px 85px;
   box-sizing: border-box;
   min-height: 385px;
+  position: relative;
 }
 
 .advantages-item-large:last-child .advantages-image {
@@ -208,6 +250,20 @@ body {
   text-transform: uppercase;
   text-align: center;
   margin: 0;
+}
+
+.advantages-title::after {
+  content: "";
+  position: absolute;
+  height: 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.30);
+  left: 170px;
+  right: 170px;
+  top: 188px;
+}
+
+.advantages-item-large .advantages-title::after {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.30);
 }
 
 .advantages-title {
@@ -272,11 +328,24 @@ body {
   margin-bottom: 30px;
 }
 
-.service-icon {
+.service-subtitle::before {
+  content: "";
   min-width: 75px;
   min-height: 72px;
-  order: -1;
+  display: block;
   margin-bottom: 30px;
+}
+
+.service-item:nth-child(1) .service-subtitle::before {
+  content: url("../images/icons/icon-home.svg");
+}
+
+.service-item:nth-child(2) .service-subtitle::before {
+  content: url("../images/icons/icon-hamburger.svg");
+}
+
+.service-item:nth-child(3) .service-subtitle::before {
+  content: url("../images/icons/icon-gift-box.svg");
 }
 
 /*hotel search*/
@@ -338,12 +407,12 @@ body {
   border: transparent;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
+  min-width: 452px;
 }
 
 .button-subscribe {
   background-color: #82b3d3;
   padding: 8px 50px;
-  border: transparent;
   border-radius: 0;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -369,15 +438,28 @@ body {
   list-style-type: none;
 }
 
-.social-item {
-  outline: 1px solid #7db54f;
-}
-
 .social-link {
   display: block;
   padding: 13px 10px;
   min-width: 24px;
   min-height: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.social-link-vk {
+  background-image: url("../images/icons/icon-vk.svg");
+  background-size: 24px 14px;
+}
+
+.social-link-telegram {
+  background-image: url("../images/icons/icon-telegram.svg");
+  background-size: 18px 15px;
+}
+
+.social-link-youtube {
+  background-image: url("../images/icons/icon-youtube.svg");
+  background-size: 22px 17px;
 }
 
 .phone-number {
@@ -416,6 +498,7 @@ body {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   margin-bottom: 40px;
 }
 
@@ -427,6 +510,26 @@ body {
   min-height: 12px;
   margin-right: 28px;
   display: block;
+}
+
+.breadcrumbs-item:last-child .breadcrumbs-link {
+  margin-right: 0;
+}
+
+.breadcrumbs-link-home {
+  background-image: url("../images/icons/icon-breadcrumbs-home.svg");
+  background-position: center;
+  background-size: 12px 12px;
+}
+
+.breadcrumbs-item {
+  position: relative;
+}
+
+.breadcrumbs-item + .breadcrumbs-item::before {
+  content: url("../images/icons/icon-arrow.svg");
+  position: absolute;
+  left: -17px;
 }
 
 /*filter*/
@@ -600,20 +703,32 @@ body {
   max-width: 160px;
 }
 
-.view-filter-item {
+.view-filter-link {
   border: 2px solid #e5e5e5;
   border-radius: 4px;
+  display: block;
+  padding: 14px 15px;
+  min-width: 14px;
+  min-height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 14px;
 }
 
 .view-filter-item-current {
   border-color: #000000;
 }
 
-.view-filter-link {
-  display: block;
-  padding: 14px 12px;
-  min-width: 14px;
-  min-height: 16px;
+.view-filter-link-tile {
+  background-image: url(../images/icons/icon-view-tile.svg);
+}
+
+.view-filter-link-slideshow {
+  background-image: url(../images/icons/icon-view-slideshow.svg);
+}
+
+.view-filter-link-list {
+  background-image: url(../images/icons/icon-view-list.svg);
 }
 
 .hotel-list {
@@ -702,19 +817,19 @@ body {
 }
 
 .hotel-stars-2 {
-  width: 42px;
+  width: 40px;
 }
 
 .hotel-stars-3 {
-  width: 60px;
+  width: 62px;
 }
 
 .hotel-stars-4 {
-  width: 78px;
+  width: 84px;
 }
 
 .hotel-stars-5 {
-  width: 96px;
+  width: 106px;
 }
 
 .hotel-rating {
@@ -784,4 +899,126 @@ body {
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
+}
+
+/*behavior view styles button*/
+/*:focus
+:hover
+:active*/
+
+/*Навигационные кнопки*/
+.navigation-link:focus:not(.navigation-current) {
+  background-color: #dcdcdc;
+  outline: none;
+}
+
+.navigation-link:hover:not(.navigation-current) {
+  background-color: #dcdcdc;
+}
+
+.navigation-link:active:not(.navigation-current) {
+  opacity: 0.3;
+  background-color: transparent;
+}
+
+
+/*Поведение коричневых кнопок*/
+.navigation-button:focus-visible,
+.button-search:focus-visible,
+.hotel-more-link:focus-visible {
+  background-color: #615048;
+  outline: none;
+}
+
+.navigation-button:hover,
+.button-search:hover,
+.hotel-more-link:hover {
+  background-color: #615048;
+}
+
+.navigation-button:active,
+.button-search:active,
+.hotel-more-link:active {
+  background-color: #756157;
+}
+
+/*Поведение голубых кнопок*/
+.button-subscribe:focus-visible,
+.button-apply:focus-visible,
+.hotel-favorite-button:focus-visible {
+  background-color: #68a2ca;
+  outline: none;
+}
+
+.button-subscribe:hover,
+.button-apply:hover,
+.hotel-favorite-button:hover {
+  background-color: #68a2ca;
+}
+
+.button-subscribe:active,
+.button-apply:active,
+.hotel-favorite-button:active {
+  background-color: #82b3d3;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/*Зеленые кнопки*/
+.hotel-favorite-button.favorite:focus-visible {
+  background-color: #6c9e42;
+  outline: none;
+}
+
+.hotel-favorite-button.favorite:hover {
+  background-color: #6c9e42;
+}
+
+.hotel-favorite-button.favorite:active {
+  background-color: #7db54f;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/*Кнопки с прозрачным фоном*/
+.button-reset:focus-visible {
+  border-radius: 4px;
+  outline: 3px solid #83B3D3;
+}
+
+.button-reset:hover {
+  opacity: 0.6;
+}
+
+.button-reset:active {
+  color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+/*Выпадающий список*/
+.catalog-sorting-list:focus-visible {
+  border-color: #68a2ca;
+  outline: none;
+}
+
+.catalog-sorting-list:hover {
+  border-color: #68a2ca;
+}
+
+/*Фильтр показа карточек*/
+.view-filter-link:focus-visible {
+  border-color: #68a2ca;
+  outline: none;
+}
+
+.view-filter-link:hover {
+  border-color: #000000;
+}
+
+.view-filter-link:active {
+  border-color: #000000;
+}
+/*Кнопки пагинации*/
+.pagination-link:focus-visible:not(.pagination-item-current){
+  border: 1px solid #82b3d3;
+  outline: none;
+  background-color: #68a2ca;
 }
