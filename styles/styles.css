@@ -162,17 +162,18 @@ body {
 /*hero block*/
 .welcome-to-sedona {
   background-color: #82b3d3;
-  background-image: url("../images/mountains.jpg");
-  background-size: cover;
+  background-image: url("../images/decorative-figure.svg"),
+   url("../images/mountains.jpg");
+  background-size: auto, cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center bottom;
   min-height: 485px;
-  padding-top: 51px;
 }
 
 .image-welcome-sedona {
   display: block;
   margin: 0 auto;
+  padding-top: 51px;
 }
 
 /*sections start bold text*/
