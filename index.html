@@ -200,16 +200,28 @@
 
             <div class="person-quantity-wrapper">
               <div class="person-quantity">
-                <label class="field-group-label">Взрослые:</label>
-                <input class="field-group-input" type="text" required>
+                <label class="field-group-label adults-person-label" for="adults-input">Взрослые:</label>
+                <button class="button-change-quantity button-person-less" type="button">
+                  <span class="visually-hidden">Меньше</span>
+                </button>
+                <input class="field-group-input" type="text" id="adults-input" required>
+                <button class="button-change-quantity button-person-more" type="button">
+                  <span class="visually-hidden">Больше</span>
+                </button>
               </div>
 
               <div class="person-quantity">
                 <div class="child-information-wrapper">
-                  <label class="field-group-label">Дети:</label>
+                  <label class="field-group-label childs-person-label" for="childs-input">Дети:</label>
                   <button class="information-button" type="button"></button>
                 </div>
-                <input class="field-group-input" type="text" required>
+                <button class="button-change-quantity button-person-less" type="button">
+                  <span class="visually-hidden">Меньше</span>
+                </button>
+                <input class="field-group-input" type="text" id="childs-input" required>
+                <button class="button-change-quantity button-person-more" type="button">
+                  <span class="visually-hidden">Больше</span>
+                </button>
               </div>
             </div>
 
