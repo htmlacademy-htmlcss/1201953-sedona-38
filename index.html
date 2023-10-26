@@ -184,14 +184,14 @@
           <h2 class="hotel-search-title">Поиск гостиницы в Седоне</h2>
 
           <form class="hotel-search-form" action="">
-            <div class="form-search-row-wrapper">
+            <div class="form-search-date-wrapper">
               <label class="field-group-label" for="arival-date">Дата заезда:</label>
               <input class="field-group-input" type="text" id="arival-date" required>
 
               <p class="field-signature error-arival-date">Мы не можем отправить вас в прошлое</p>
             </div>
 
-            <div class="form-search-row-wrapper">
+            <div class="form-search-date-wrapper">
               <label class="field-group-label" for="date-of-departure">Дата выезда:</label>
               <input class="field-group-input" type="text" id="date-of-departure" required>
 
@@ -199,12 +199,18 @@
             </div>
 
             <div class="person-quantity-wrapper">
-              <label class="field-group-label">Взрослые:</label>
-              <input class="field-group-input" type="text" required>
+              <div class="person-quantity">
+                <label class="field-group-label">Взрослые:</label>
+                <input class="field-group-input" type="text" required>
+              </div>
 
-              <label class="field-group-label">Дети:</label>
-              <button class="information-button" type="button"></button>
-              <input class="field-group-input" type="text" required>
+              <div class="person-quantity">
+                <div class="child-information-wrapper">
+                  <label class="field-group-label">Дети:</label>
+                  <button class="information-button" type="button"></button>
+                </div>
+                <input class="field-group-input" type="text" required>
+              </div>
             </div>
 
             <button class="button hotel-search-button" type="submit">Найти</button>

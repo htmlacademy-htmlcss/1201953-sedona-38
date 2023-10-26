@@ -1066,11 +1066,23 @@ body {
   margin-bottom: 64px;
 }
 
-.form-search-row-wrapper {
+.form-search-date-wrapper {
   display: flex;
   position: relative;
   align-items: center;
   margin-right: 24px;
+}
+
+.person-quantity-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.person-quantity {
+  flex-basis: 248px;
+  display: flex;
+  align-items: center;
 }
 
 .field-group-label {
@@ -1080,7 +1092,7 @@ body {
   text-transform: capitalize;
 }
 
-.form-search-row-wrapper .field-group-label {
+.form-search-date-wrapper .field-group-label {
   flex-basis: 119px;
   margin-right: 18px;
 }
@@ -1095,7 +1107,7 @@ body {
   background-color: #f2f2f2;
 }
 
-.form-search-row-wrapper .field-group-input {
+.form-search-date-wrapper .field-group-input {
   flex-grow: 1;
 }
 
