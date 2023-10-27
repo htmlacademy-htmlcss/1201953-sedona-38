@@ -1475,11 +1475,13 @@ body {
 }
 
 /*Поведение текстовых инпутов*/
-.range-input:focus {
+.range-input:focus,
+.field-group-input:focus {
   outline: 3px solid #82b3d3;
 }
 
-.email-text:focus {
+.email-text:focus,
+.person-quantity .field-group-input:focus {
   outline: 3px solid #82b3d3;
   outline-offset: -3px;
 }
