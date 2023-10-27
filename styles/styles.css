@@ -1052,6 +1052,16 @@ body {
   position: absolute;
   top: 64px;
   right: 52px;
+}
+
+.button-close::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-image: url("../images/icons/icon-x.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -1106,6 +1116,41 @@ body {
 .childs-person-label {
   margin-right: 10px;
   max-width: 49px;
+}
+
+.tooltip {
+  line-height: 0;
+  flex-basis: 26px;
+  position: relative;
+}
+
+.tooltip-text {
+  width: 256px;
+  position: absolute;
+  font-size: 16px;
+  line-height: 20px;
+  top: 41px;
+  left: -115px;
+  color: #ffffff;
+  background-color: #333333;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.30);
+  padding: 15px 18px 18px 22px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: none;
+}
+
+.tooltip-text::before {
+  content: "";
+  width: 19px;
+  height: 9px;
+  position: absolute;
+  top: -9px;
+  left: 128px;
+  transform: translateX(-50%);
+  background-image: url("../images/icons/icon-arrow-tooltip.svg");
+  background-repeat: no-repeat;
+  display: none;
 }
 
 .field-group-label {
@@ -1201,6 +1246,20 @@ body {
   left: 0;
   margin: auto;
 }
+
+/* .button-change-quantity::before { */
+/* .button-person-less::before,
+.button-person-more::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+} */
 
 .icon-button-more {
   position: absolute;
@@ -1499,4 +1558,65 @@ body {
 .control:active .control-custom-checkbox,
 .control:active {
   opacity: 0.3;
+}
+
+/*Поведение кнопки закрытия попап окна*/
+.button-close:focus-visible {
+  outline: 3px solid #82b3d3;
+}
+
+.button-close:hover {
+  background-color: #e6e6e6;
+}
+
+.button-close:active {
+  background-color: #e6e6e6;
+}
+
+.button-close:active::before {
+  opacity: 0.3;
+}
+
+/*Поведение кнопок изменение количества людей*/
+.button-change-quantity:focus-visible {
+  outline: none;
+}
+
+.button-change-quantity:focus-visible:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  outline: 3px solid #82b3d3;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.button-change-quantity:hover::after {
+  background-color: #000000;
+}
+
+.button-change-quantity:hover .icon-button-more {
+  fill: #000000;
+}
+
+.button-change-quantity:active::after {
+  background-color: #000000;
+  opacity: 0.3;
+}
+
+.button-change-quantity:active .icon-button-more {
+  fill: #000000;
+  opacity: 0.3;
+}
+
+/*Поведение при наводе на кнопку с доп. инфо.*/
+.information-button:hover ~ .tooltip-text,
+.information-button:hover ~ .tooltip-text::before {
+  display: block;
+  transition-delay: 1s;
 }
