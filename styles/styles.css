@@ -163,7 +163,7 @@ body {
 .welcome-to-sedona {
   background-color: #82b3d3;
   background-image: url("../images/decorative-figure.svg"),
-   url("../images/mountains.jpg");
+    url("../images/mountains.jpg");
   background-size: auto, cover;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -1074,12 +1074,11 @@ body {
 
 .person-quantity-wrapper {
   display: grid;
-  grid-template-columns: 247px 242px;
+  grid-template-columns: 248px 242px;
   gap: 48px 88px;
 }
 
 .person-quantity {
-  flex-basis: 248px;
   display: flex;
   align-items: center;
 }
@@ -1099,10 +1098,14 @@ body {
 
 .child-information-wrapper {
   max-width: 85px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .childs-person-label {
   margin-right: 10px;
+  max-width: 49px;
 }
 
 .field-group-label {
@@ -1117,19 +1120,42 @@ body {
   margin-right: 18px;
 }
 
+.date-input-wrapper {
+  flex-grow: 1;
+  flex-basis: 440px;
+  position: relative;
+}
+
+.date-input-wrapper::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: 20px;
+  background-image: url("../images/icons/icon-calendar.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+}
+
 .field-group-input {
   font-family: inherit;
   font-size: inherit;
   font-weight: 700;
   line-height: 24px;
   padding: 12px 20px;
+  padding-right: 40px;
   border-radius: 4px;
   border: none;
   background-color: #f2f2f2;
 }
 
 .form-search-date-wrapper .field-group-input {
-  flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .person-quantity-wrapper .field-group-input {
@@ -1150,6 +1176,7 @@ body {
   text-align: center;
   border: none;
   background-color: #f2f2f2;
+  position: relative;
 }
 
 .button-person-less {
@@ -1161,6 +1188,66 @@ body {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
+
+.button-person-less::after {
+  content: "";
+  width: 14px;
+  height: 2px;
+  background-color: rgba(117, 97, 87, 0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.icon-button-more {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: rgba(117, 97, 87, 0.3);
+}
+
+.information-button {
+  width: 26px;
+  height: 26px;
+  background-color: #82b3d3;
+  border: none;
+  border-radius: 50%;
+  background-image: url("../images/icons/icon-i.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*Попытка сделать через псевдоэлементы, на пересечении изменялся цвет, сделал подложку в виде градиента*/
+/*.button-change-quantity::after,
+ .button-person-more::before {
+  /* .button-person-less::after {
+  content: "";
+  width: 14px;
+  height: 2px;
+  background-color: rgba(117, 97, 87, 0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.button-person-more::before {
+  transform: rotate(90deg);
+  background-image: linear-gradient(to right, transparent 6px, #f2f2f2 6px, #f2f2f2 8px, transparent 8px);
+}
+
+.button-person-more:hover ~ .button-change-quantity::after,
+.button-person-more:hover ~ .button-person-more::before {
+  background-color: #000000;
+}*/
 
 .field-signature {
   position: absolute;
@@ -1179,7 +1266,8 @@ body {
   color: #333333;
 }
 
-.hotel-search-button {
+.button-hotel-search {
+  font-size: 20px;
   background-color: #82b3d3;
   padding: 18px 77px;
 }
@@ -1222,20 +1310,23 @@ body {
 /*Поведение голубых кнопок*/
 .button-subscribe:focus-visible,
 .button-apply:focus-visible,
-.hotel-favorite-button:focus-visible {
+.hotel-favorite-button:focus-visible,
+.button-hotel-search:focus-visible {
   background-color: #68a2ca;
   outline: none;
 }
 
 .button-subscribe:hover,
 .button-apply:hover,
-.hotel-favorite-button:hover {
+.hotel-favorite-button:hover,
+.button-hotel-search:hover {
   background-color: #68a2ca;
 }
 
 .button-subscribe:active,
 .button-apply:active,
-.hotel-favorite-button:active {
+.hotel-favorite-button:active,
+.button-hotel-search:active {
   background-color: #82b3d3;
   color: rgba(255, 255, 255, 0.3);
 }
@@ -1327,16 +1418,16 @@ body {
 }
 
 /*Поведение номера телефона*/
-.phone-number:focus-visible{
+.phone-number:focus-visible {
   outline: none;
   color: #756157;
 }
 
-.phone-number:hover{
+.phone-number:hover {
   color: #756157;
 }
 
-.phone-number:active{
+.phone-number:active {
   color: rgba(117, 97, 87, 0.3)
 }
 
@@ -1345,15 +1436,15 @@ body {
   outline: none;
 }
 
-.htmlacademy-link:focus-visible .htmlacademy-icon{
+.htmlacademy-link:focus-visible .htmlacademy-icon {
   fill: #756157;
 }
 
-.htmlacademy-link:hover .htmlacademy-icon{
+.htmlacademy-link:hover .htmlacademy-icon {
   fill: #756157;
 }
 
-.htmlacademy-link:active .htmlacademy-icon{
+.htmlacademy-link:active .htmlacademy-icon {
   fill: rgba(117, 97, 87, 0.3);
 }
 
@@ -1371,15 +1462,15 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.breadcrumbs-link:focus-visible .breadcrumbs-icon{
+.breadcrumbs-link:focus-visible .breadcrumbs-icon {
   fill: #ffffff;
 }
 
-.breadcrumbs-link:hover .breadcrumbs-icon{
+.breadcrumbs-link:hover .breadcrumbs-icon {
   fill: rgba(255, 255, 255, 0.6);
 }
 
-.breadcrumbs-link:active .breadcrumbs-icon{
+.breadcrumbs-link:active .breadcrumbs-icon {
   fill: rgba(255, 255, 255, 0.3);
 }
 
