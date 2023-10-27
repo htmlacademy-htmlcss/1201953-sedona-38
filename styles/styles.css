@@ -1025,6 +1025,10 @@ body {
   display: flex;
 }
 
+.popup-close {
+  display: none;
+}
+
 .popup {
   position: relative;
   width: 718px;
@@ -1137,7 +1141,8 @@ body {
   padding: 15px 18px 18px 22px;
   border-radius: 10px;
   box-sizing: border-box;
-  display: none;
+  opacity: 0;
+  transition: all 0.3s linear;
 }
 
 .tooltip-text::before {
@@ -1150,7 +1155,8 @@ body {
   transform: translateX(-50%);
   background-image: url("../images/icons/icon-arrow-tooltip.svg");
   background-repeat: no-repeat;
-  display: none;
+  opacity: 0;
+  transition: all 0.3s linear;
 }
 
 .field-group-label {
@@ -1617,6 +1623,6 @@ body {
 /*Поведение при наводе на кнопку с доп. инфо.*/
 .information-button:hover ~ .tooltip-text,
 .information-button:hover ~ .tooltip-text::before {
-  display: block;
-  transition-delay: 1s;
+  opacity: 1;
+  transition: all 0.3s linear;
 }
