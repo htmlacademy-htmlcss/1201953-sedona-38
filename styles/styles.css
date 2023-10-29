@@ -72,7 +72,7 @@ body {
 }
 
 .navigation-user {
-  flex-basis: 150px;
+  flex-basis: 88px;
   margin-left: auto;
   margin-right: 20px;
 }
@@ -162,17 +162,18 @@ body {
 /*hero block*/
 .welcome-to-sedona {
   background-color: #82b3d3;
-  background-image: url("../images/mountains.jpg");
-  background-size: cover;
+  background-image: url("../images/decorative-figure.svg"),
+    url("../images/mountains.jpg");
+  background-size: auto, cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center bottom;
   min-height: 485px;
-  padding-top: 51px;
 }
 
 .image-welcome-sedona {
   display: block;
   margin: 0 auto;
+  padding-top: 51px;
 }
 
 /*sections start bold text*/
@@ -410,6 +411,11 @@ body {
   box-sizing: border-box;
 }
 
+.email-text::placeholder {
+  color: #000000;
+  opacity: 0.6;
+}
+
 .button-subscribe {
   font-size: 20px;
   line-height: 36px;
@@ -607,6 +613,7 @@ body {
 .range-container {
   display: flex;
   column-gap: 2px;
+  margin-bottom: 48px;
 }
 
 .range-title {
@@ -648,6 +655,41 @@ body {
   opacity: 0.3;
 }
 
+.range-scale {
+  position: relative;
+  width: 287px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.range-bar {
+  position: absolute;
+  height: 4px;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.range-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.range-toggle-min {
+  top: -8px;
+  left: 0;
+}
+
+.range-toggle-max {
+  top: -8px;
+  right: 0;
+}
+
 .button-wrapper {
   display: flex;
   flex-direction: column;
@@ -668,6 +710,62 @@ body {
 }
 
 .control {
+  padding-left: 36px;
+  position: relative;
+}
+
+.control-custom-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.control-input[type="checkbox"]:checked + .control-custom-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/icons/icon-check-mark.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.control-custom-radio {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked + .control-custom-radio::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: center;
+  transform: translate(50%, 50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #3f5e72;
+}
+
+.control-label {
   line-height: 23px;
 }
 
@@ -689,10 +787,11 @@ body {
   margin-left: auto;
   margin-right: 70px;
   padding: 12px 18px;
+  padding-right: 30px;
   background-color: transparent;
   color: #333333;
   border-radius: 4px;
-  width: 252px;
+  width: 292px;
   box-sizing: border-box;
   border: 2px solid #e5e5e5;
   appearance: none;
@@ -915,10 +1014,331 @@ body {
   clip: rect(0 0 0 0);
 }
 
-/*behavior view styles button*/
-/*:focus
-:hover
-:active*/
+/*Попап*/
+.popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.8);
+  display: flex;
+}
+
+.popup-close {
+  display: none;
+}
+
+.popup {
+  position: relative;
+  width: 718px;
+  background-color: #ffffff;
+  margin: auto;
+  padding: 64px 70px;
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+
+.hotel-search-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 48px;
+}
+
+.button-close {
+  width: 52px;
+  height: 52px;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  top: 64px;
+  right: 52px;
+}
+
+.button-close::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../images/icons/icon-x.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hotel-search-title {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 64px;
+}
+
+.form-search-date-wrapper {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.person-quantity-wrapper {
+  display: grid;
+  grid-template-columns: 248px 242px;
+  gap: 48px 88px;
+}
+
+.person-quantity {
+  display: flex;
+  align-items: center;
+}
+
+.person-quantity:last-child {
+  justify-self: end;
+}
+
+.adults-person-label,
+.child-information-wrapper {
+  margin-right: 46px;
+}
+
+.adults-person-label {
+  max-width: 91px;
+}
+
+.child-information-wrapper {
+  max-width: 85px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.childs-person-label {
+  margin-right: 10px;
+  max-width: 49px;
+}
+
+.tooltip {
+  line-height: 0;
+  flex-basis: 26px;
+  position: relative;
+}
+
+.tooltip-text {
+  width: 256px;
+  position: absolute;
+  font-size: 16px;
+  line-height: 20px;
+  top: 41px;
+  left: -115px;
+  color: #ffffff;
+  background-color: #333333;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.30);
+  padding: 15px 18px 18px 22px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.tooltip-text::before {
+  content: "";
+  width: 19px;
+  height: 9px;
+  position: absolute;
+  top: -9px;
+  left: 128px;
+  transform: translateX(-50%);
+  background-image: url("../images/icons/icon-arrow-tooltip.svg");
+  background-repeat: no-repeat;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.field-group-label {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: capitalize;
+}
+
+.form-search-date-wrapper .field-group-label {
+  flex-basis: 119px;
+  margin-right: 18px;
+}
+
+.date-input-wrapper {
+  flex-grow: 1;
+  flex-basis: 440px;
+  position: relative;
+}
+
+.date-input-wrapper::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: 20px;
+  background-image: url("../images/icons/icon-calendar.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+}
+
+.field-group-input {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 12px 20px;
+  padding-right: 40px;
+  border-radius: 4px;
+  border: none;
+  background-color: #f2f2f2;
+}
+
+.form-search-date-wrapper .field-group-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.person-quantity-wrapper .field-group-input {
+  font-size: inherit;
+  line-height: 20px;
+  padding: 14px 0;
+  width: 31px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 0;
+}
+
+.button-change-quantity {
+  width: 40px;
+  height: 48px;
+  box-sizing: border-box;
+  padding: 14px 0;
+  text-align: center;
+  border: none;
+  background-color: #f2f2f2;
+  position: relative;
+}
+
+.button-person-less {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.button-person-more {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.button-person-less::after {
+  content: "";
+  width: 14px;
+  height: 2px;
+  background-color: rgba(117, 97, 87, 0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+/* .button-change-quantity::before { */
+/* .button-person-less::before,
+.button-person-more::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+} */
+
+.icon-button-more {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: rgba(117, 97, 87, 0.3);
+}
+
+.information-button {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background-color: #82b3d3;
+  border: none;
+  border-radius: 50%;
+  background-image: url("../images/icons/icon-i.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*Попытка сделать через псевдоэлементы, на пересечении изменялся цвет, сделал подложку в виде градиента*/
+/*.button-change-quantity::after,
+ .button-person-more::before {
+  /* .button-person-less::after {
+  content: "";
+  width: 14px;
+  height: 2px;
+  background-color: rgba(117, 97, 87, 0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.button-person-more::before {
+  transform: rotate(90deg);
+  background-image: linear-gradient(to right, transparent 6px, #f2f2f2 6px, #f2f2f2 8px, transparent 8px);
+}
+
+.button-person-more:hover ~ .button-change-quantity::after,
+.button-person-more:hover ~ .button-person-more::before {
+  background-color: #000000;
+}*/
+
+.field-signature {
+  position: absolute;
+  font-size: 16px;
+  line-height: 21px;
+  margin: 0;
+  top: calc(50% + 28px);
+  left: 157px;
+}
+
+.error-arival-date {
+  color: #ff5757;
+}
+
+.description-date-of-departure {
+  color: #333333;
+}
+
+.button-hotel-search {
+  font-size: 20px;
+  background-color: #82b3d3;
+  padding: 18px 77px;
+}
 
 /*Навигационные кнопки*/
 .navigation-link:focus-visible {
@@ -958,20 +1378,23 @@ body {
 /*Поведение голубых кнопок*/
 .button-subscribe:focus-visible,
 .button-apply:focus-visible,
-.hotel-favorite-button:focus-visible {
+.hotel-favorite-button:focus-visible,
+.button-hotel-search:focus-visible {
   background-color: #68a2ca;
   outline: none;
 }
 
 .button-subscribe:hover,
 .button-apply:hover,
-.hotel-favorite-button:hover {
+.hotel-favorite-button:hover,
+.button-hotel-search:hover {
   background-color: #68a2ca;
 }
 
 .button-subscribe:active,
 .button-apply:active,
-.hotel-favorite-button:active {
+.hotel-favorite-button:active,
+.button-hotel-search:active {
   background-color: #82b3d3;
   color: rgba(255, 255, 255, 0.3);
 }
@@ -1063,16 +1486,16 @@ body {
 }
 
 /*Поведение номера телефона*/
-.phone-number:focus-visible{
+.phone-number:focus-visible {
   outline: none;
   color: #756157;
 }
 
-.phone-number:hover{
+.phone-number:hover {
   color: #756157;
 }
 
-.phone-number:active{
+.phone-number:active {
   color: rgba(117, 97, 87, 0.3)
 }
 
@@ -1081,15 +1504,15 @@ body {
   outline: none;
 }
 
-.htmlacademy-link:focus-visible .htmlacademy-icon{
+.htmlacademy-link:focus-visible .htmlacademy-icon {
   fill: #756157;
 }
 
-.htmlacademy-link:hover .htmlacademy-icon{
+.htmlacademy-link:hover .htmlacademy-icon {
   fill: #756157;
 }
 
-.htmlacademy-link:active .htmlacademy-icon{
+.htmlacademy-link:active .htmlacademy-icon {
   fill: rgba(117, 97, 87, 0.3);
 }
 
@@ -1107,14 +1530,103 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.breadcrumbs-link:focus-visible .breadcrumbs-icon{
+.breadcrumbs-link:focus-visible .breadcrumbs-icon {
   fill: #ffffff;
 }
 
-.breadcrumbs-link:hover .breadcrumbs-icon{
+.breadcrumbs-link:hover .breadcrumbs-icon {
   fill: rgba(255, 255, 255, 0.6);
 }
 
-.breadcrumbs-link:active .breadcrumbs-icon{
+.breadcrumbs-link:active .breadcrumbs-icon {
   fill: rgba(255, 255, 255, 0.3);
+}
+
+/*Поведение текстовых инпутов*/
+.range-input:focus,
+.field-group-input:focus {
+  outline: 3px solid #82b3d3;
+}
+
+.email-text:focus,
+.person-quantity .field-group-input:focus {
+  outline: 3px solid #82b3d3;
+  outline-offset: -3px;
+}
+
+/*Поведение checkbox и radio*/
+.control-input:focus-visible + .control-custom-checkbox,
+.control-input:focus-visible + .control-custom-radio {
+  outline: 3px solid #82b3d3;
+}
+
+.control:hover {
+  opacity: 0.6;
+}
+
+.control:active .control-custom-checkbox,
+.control:active {
+  opacity: 0.3;
+}
+
+/*Поведение кнопки закрытия попап окна*/
+.button-close:focus-visible {
+  outline: 3px solid #82b3d3;
+}
+
+.button-close:hover {
+  background-color: #e6e6e6;
+}
+
+.button-close:active {
+  background-color: #e6e6e6;
+}
+
+.button-close:active::before {
+  opacity: 0.3;
+}
+
+/*Поведение кнопок изменение количества людей*/
+.button-change-quantity:focus-visible {
+  outline: none;
+}
+
+.button-change-quantity:focus-visible:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  outline: 3px solid #82b3d3;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.button-change-quantity:hover::after {
+  background-color: #000000;
+}
+
+.button-change-quantity:hover .icon-button-more {
+  fill: #000000;
+}
+
+.button-change-quantity:active::after {
+  background-color: #000000;
+  opacity: 0.3;
+}
+
+.button-change-quantity:active .icon-button-more {
+  fill: #000000;
+  opacity: 0.3;
+}
+
+/*Поведение при наводе на кнопку с доп. инфо.*/
+.information-button:hover ~ .tooltip-text,
+.information-button:hover ~ .tooltip-text::before {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.3s linear;
 }
