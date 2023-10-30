@@ -707,7 +707,7 @@ body {
   right: 0;
 }
 
-.button-wrapper {
+.catalog-button-wrapper {
   display: flex;
   flex-direction: column;
   padding-top: 56px;
