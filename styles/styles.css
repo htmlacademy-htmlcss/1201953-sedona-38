@@ -92,12 +92,14 @@ body {
 
 .navigation-link {
   display: block;
+  max-width: 150px;
   color: inherit;
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
   text-align: center;
   text-decoration: none;
+  word-wrap: break-word;
   padding: 20px 16px;
 }
 
@@ -150,6 +152,7 @@ body {
   font-weight: 700;
   line-height: 20px;
   text-transform: uppercase;
+  word-wrap: break-word;
   color: #ffffff;
   background-color: #756157;
   border-radius: 4px;
@@ -190,6 +193,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
+  word-wrap: break-word;
   margin: 0;
 }
 
@@ -244,11 +248,13 @@ body {
 
 .advantages-title,
 .service-subtitle {
+  max-width: 225px;
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
+  word-wrap: break-word;
   margin: 0;
 }
 
@@ -272,10 +278,12 @@ body {
 
 .advantages-description,
 .service-definition {
+  max-width: 225px;
   color: #333333;
   font-size: 18px;
   line-height: 21px;
   text-align: center;
+  word-wrap: break-word;
   margin: 0;
 }
 
@@ -363,6 +371,7 @@ body {
 }
 
 .button-search {
+  max-width: 376px;
   font-size: 20px;
   line-height: 36px;
   text-decoration: none;
@@ -417,6 +426,7 @@ body {
 }
 
 .button-subscribe {
+  max-width: 232px;
   font-size: 20px;
   line-height: 36px;
   background-color: #82b3d3;
@@ -470,6 +480,7 @@ body {
   line-height: 40px;
   text-decoration: none;
   max-width: 400px;
+  word-wrap: break-word;
   margin-right: auto;
 }
 
