@@ -280,7 +280,7 @@ body {
 
 .advantages-description,
 .service-definition {
-  max-width: 225px;
+  max-width: 230px;
   color: #333333;
   font-size: 18px;
   line-height: 21px;
@@ -331,6 +331,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: 385px;
 }
 
@@ -456,6 +457,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
+}
+
+.social-item {
+  flex-basis: 48px;
 }
 
 .social-link {
@@ -602,7 +607,7 @@ body {
 }
 
 .catalog-filter-group:nth-child(1) {
-  margin-right: 60px;
+  margin-right: 70px;
 }
 
 .catalog-filter-group:last-of-type {
@@ -615,9 +620,10 @@ body {
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
+  text-transform: capitalize;
+  word-wrap: break-word;
   margin-bottom: 32px;
   max-width: 150px;
-  word-wrap: break-word;
   padding: 0;
 }
 
