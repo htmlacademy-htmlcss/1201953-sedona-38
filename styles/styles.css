@@ -211,6 +211,7 @@ body {
   font-size: 22px;
   line-height: 26px;
   text-align: center;
+  word-wrap: break-word;
   margin: 0;
 }
 
@@ -395,7 +396,6 @@ body {
 }
 
 .newsletter-description {
-  word-wrap: break-word;
   color: #ffffff;
   padding: 0 70px;
   margin-bottom: 54px;
@@ -585,7 +585,7 @@ body {
 }
 
 .catalog-filter-item {
-  max-width: 158px;
+  max-width: 150px;
   margin-bottom: 16px;
 }
 
@@ -594,7 +594,7 @@ body {
 }
 
 .catalog-filter-group {
-  flex-basis: 160px;
+  flex-basis: 151px;
   margin: 0;
   padding: 0;
   border: none;
@@ -615,6 +615,9 @@ body {
   line-height: 24px;
   font-weight: 700;
   margin-bottom: 32px;
+  max-width: 150px;
+  word-wrap: break-word;
+  padding: 0;
 }
 
 .catalog-search-description {
@@ -729,7 +732,9 @@ body {
 
 .control {
   padding-left: 36px;
+  display: inline-block;
   position: relative;
+  max-width: 114px;
 }
 
 .control-custom-checkbox {
