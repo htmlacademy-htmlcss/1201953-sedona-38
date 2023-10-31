@@ -216,7 +216,7 @@ body {
 }
 
 .sedona-is-better {
-  margin-bottom: 69px;
+  margin-bottom: 90px;
 }
 
 /*advantages and services*/
@@ -260,6 +260,14 @@ body {
   margin: 0;
 }
 
+.advantages-item:not(.advantages-item-large) .advantages-title {
+  padding-top: 10px;
+}
+
+.advantages-title {
+  margin-bottom: 62px;
+}
+
 .advantages-title::after {
   content: "";
   position: absolute;
@@ -270,12 +278,12 @@ body {
   top: 188px;
 }
 
-.advantages-item-large .advantages-title::after {
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+.advantages-item:not(.advantages-item-large) .advantages-title::after {
+  top: 198px;
 }
 
-.advantages-title {
-  margin-bottom: 62px;
+.advantages-item-large .advantages-title::after {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .advantages-description,
@@ -349,6 +357,7 @@ body {
 
 .service-item:nth-child(1) .service-subtitle::before {
   content: url("../images/icons/icon-home.svg");
+
 }
 
 .service-item:nth-child(2) .service-subtitle::before {
@@ -357,6 +366,7 @@ body {
 
 .service-item:nth-child(3) .service-subtitle::before {
   content: url("../images/icons/icon-gift-box.svg");
+  margin-bottom: 26px;
 }
 
 /*hotel search*/
@@ -639,6 +649,8 @@ body {
 
 .range-container {
   display: flex;
+  -webkit-column-gap: 2px;
+  -moz-column-gap: 2px;
   column-gap: 2px;
   margin-bottom: 48px;
 }
@@ -787,7 +799,9 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  -webkit-transform-origin: center;
   transform-origin: center;
+  -webkit-transform: translate(50%, 50%);
   transform: translate(50%, 50%);
   width: 10px;
   height: 10px;
@@ -825,6 +839,8 @@ body {
   width: 292px;
   box-sizing: border-box;
   border: 2px solid #e5e5e5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   background-image: url("../images/icons/icon-arrow-downsvg.svg");
   background-repeat: no-repeat;
@@ -1072,6 +1088,7 @@ body {
   padding: 64px 70px;
   box-sizing: border-box;
   border-radius: 30px;
+  box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.15);
 }
 
 .hotel-search-form {
@@ -1100,6 +1117,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background-image: url("../images/icons/icon-x.svg");
   background-position: center;
@@ -1165,6 +1183,7 @@ body {
 
 .tooltip-text {
   width: 256px;
+  min-height: 143px;
   position: absolute;
   font-size: 16px;
   line-height: 20px;
@@ -1188,6 +1207,7 @@ body {
   position: absolute;
   top: -9px;
   left: 128px;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   background-image: url("../images/icons/icon-arrow-tooltip.svg");
   background-repeat: no-repeat;
@@ -1290,20 +1310,6 @@ body {
   margin: auto;
 }
 
-/* .button-change-quantity::before { */
-/* .button-person-less::before,
-.button-person-more::before {
-  position: absolute;
-  content: "";
-  width: 20px;
-  height: 20px;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-} */
-
 .icon-button-more {
   position: absolute;
   top: 0;
@@ -1326,32 +1332,6 @@ body {
   background-repeat: no-repeat;
 }
 
-/*Попытка сделать через псевдоэлементы, на пересечении изменялся цвет, сделал подложку в виде градиента*/
-/*.button-change-quantity::after,
- .button-person-more::before {
-  /* .button-person-less::after {
-  content: "";
-  width: 14px;
-  height: 2px;
-  background-color: rgba(117, 97, 87, 0.3);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-}
-
-.button-person-more::before {
-  transform: rotate(90deg);
-  background-image: linear-gradient(to right, transparent 6px, #f2f2f2 6px, #f2f2f2 8px, transparent 8px);
-}
-
-.button-person-more:hover ~ .button-change-quantity::after,
-.button-person-more:hover ~ .button-person-more::before {
-  background-color: #000000;
-}*/
-
 .field-signature {
   position: absolute;
   font-size: 16px;
@@ -1371,7 +1351,9 @@ body {
 
 .button-hotel-search {
   font-size: 20px;
+  line-height: 24px;
   background-color: #82b3d3;
+  border-radius: 10px;
   padding: 18px 77px;
 }
 
