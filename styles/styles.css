@@ -232,6 +232,7 @@ body {
 .advantages-item-large {
   flex-basis: 1200px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .advantages-large-wrapper,
