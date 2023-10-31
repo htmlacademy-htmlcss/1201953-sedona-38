@@ -235,7 +235,7 @@ body {
 }
 
 .advantages-large-wrapper,
-.advantages-item + .advantages-item:not(:last-child),
+.advantages-item + .advantages-item:not(.advantages-item-large),
 .service-item {
   flex-basis: 400px;
   padding: 102px 85px;
