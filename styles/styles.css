@@ -357,6 +357,7 @@ body {
   min-height: 72px;
   display: block;
   margin-bottom: 30px;
+  height: 72px;
 }
 
 .service-item:nth-child(1) .service-subtitle::before {
@@ -370,7 +371,6 @@ body {
 
 .service-item:nth-child(3) .service-subtitle::before {
   content: url("../images/icons/icon-gift-box.svg");
-  margin-bottom: 26px;
 }
 
 /*hotel search*/
@@ -459,7 +459,7 @@ body {
   align-items: flex-start;
   width: 1060px;
   margin: 0 auto;
-  padding: 40px 70px 30px;
+  padding: 45px 70px 35px;
 }
 
 .social-list {
