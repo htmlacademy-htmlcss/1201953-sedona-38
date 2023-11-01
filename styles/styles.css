@@ -342,7 +342,6 @@ body {
   padding: 80px 85px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   min-height: 385px;
 }
@@ -549,10 +548,6 @@ body {
   margin-right: 28px;
 }
 
-.breadcrumbs-item:first-child {
-  line-height: 0;
-}
-
 .breadcrumbs-link {
   font-size: 16px;
   color: #ffffff;
@@ -575,9 +570,10 @@ body {
 .breadcrumbs-item + .breadcrumbs-item::before {
   content: url("../images/icons/icon-arrow.svg");
   position: absolute;
-  left: -17px;
-  top: 50%;
-  transform: translateY(-50%);
+  left: -18px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
 }
 
 /*filter*/
@@ -658,7 +654,7 @@ body {
   -webkit-column-gap: 2px;
   -moz-column-gap: 2px;
   column-gap: 2px;
-  margin-bottom: 48px;
+  margin-bottom: 44px;
 }
 
 .range-title {
@@ -913,22 +909,22 @@ body {
 .hotel-list::after {
   position: absolute;
   content: "";
-  height: 0;
+  height: 2px;
   top: calc(100% + 40px);
   left: 0;
   right: 0;
-  border: 2px solid #e6e6e6;
+  background-color: #e6e6e6;
 }
 
 .hotel-item {
   flex-basis: 340px;
-  padding: 19px 19px;
+  padding: 19px;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, auto);
   align-items: center;
+  align-content: start;
   gap: 16px 20px;
   box-sizing: border-box;
   word-wrap: break-word;
@@ -940,6 +936,7 @@ body {
 }
 
 .hotel-image {
+  display: block;
   width: 100%;
   height: auto;
   object-fit: scale-down;
@@ -1008,7 +1005,7 @@ body {
 }
 
 .hotel-stars-4 {
-  width: 90px;
+  width: 89px;
 }
 
 .hotel-stars-5 {
