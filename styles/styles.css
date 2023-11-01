@@ -922,7 +922,7 @@ body {
 }
 
 .hotel-item {
-  flex-basis: 300px;
+  flex-basis: 340px;
   padding: 19px 19px;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
@@ -931,6 +931,7 @@ body {
   grid-template-rows: repeat(4, auto);
   align-items: center;
   gap: 16px 20px;
+  box-sizing: border-box;
   word-wrap: break-word;
 }
 
@@ -1008,7 +1009,7 @@ body {
 }
 
 .hotel-stars-4 {
-  width: 89px;
+  width: 90px;
 }
 
 .hotel-stars-5 {
