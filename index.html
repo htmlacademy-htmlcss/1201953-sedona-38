@@ -2,6 +2,7 @@
 <html lang="ru">
 
   <head>
+    <link rel="icon" sizes="32x32" href="images/favicon.png">
     <link rel="stylesheet" href="styles/styles.css">
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
@@ -46,8 +47,7 @@
       <main class="page-main" data-test="main">
         <h1 class="visually-hidden">Город Седона</h1>
         <div class="welcome-to-sedona" data-test="hero">
-          <img class="image-welcome-sedona" src="images/welcome-text.svg" width="458" height="352"
-            alt="Welcome to the gorgeus Sedona because the Grand Canyon sucks.">
+          <img class="image-welcome-sedona" src="images/welcome-text.svg" width="458" height="352" alt="Welcome to the gorgeus Sedona because the Grand Canyon sucks.">
         </div>
 
         <section class="advantages-sedona" data-test="advantages">
@@ -78,7 +78,7 @@
             </li>
             <li class="advantages-item advantages-item-large">
               <div class="advantages-large-wrapper">
-                <h3 class="advantages-title">Там есть Мост Дьявола</h3>
+                <h3 class="advantages-title">Там есть<br> Мост Дьявола</h3>
                 <p class="advantages-description">Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
               </div>
               <img class="advantages-image" src="images/devil-bridge.jpg" width="800" height="385" alt="Мост Дьявола.">
@@ -92,16 +92,15 @@
           <ul class="service-list">
             <li class="service-item">
               <h3 class="service-subtitle">Жилье</h3>
-              <p class="service-definition">Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
+              <p class="service-definition">Рекомендуем пожить<br> в настоящем мотеле,<br> всё как в кино!</p>
             </li>
             <li class="service-item">
               <h3 class="service-subtitle">Еда</h3>
-              <p class="service-definition">Всегда заказывайте топовый фирменный бургер, вы не разочаруетесь!
-              </p>
+              <p class="service-definition">Всегда заказывайте<br> топовый фирменный бургер, вы не разочаруетесь!</p>
             </li>
             <li class="service-item">
               <h3 class="service-subtitle">Сувениры</h3>
-              <p class="service-definition">Не только китайского, но и настоящего местного производства!</p>
+              <p class="service-definition">Не только китайского,<br> но и настоящего местного производства!</p>
             </li>
           </ul>
         </section>
@@ -109,8 +108,7 @@
         <section class="hotel-search" data-test="search">
           <h2 class="visually-hidden">Поиск гостиницы в городе Седона</h2>
           <p class="intresting-sedona">Заинтересовались?</p>
-          <p class="hotel-search-description">Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие
-            предложения гостиниц в Седоне</p>
+          <p class="hotel-search-description">Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения гостиниц в Седоне</p>
           <a class="button button-search" href="catalog.html">Поиск гостиницы в Седоне</a>
         </section>
       </main>
@@ -120,7 +118,7 @@
           <h2 class="newsletter-subscribe">Подпишитесь на рассылку</h2>
           <p class="newsletter-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-            <input class="email-text" type="email" name="email" placeholder="Ваш e-mail" aria-label="e-mail адрес">
+            <input class="email-text" type="email" name="email" placeholder="Ваш e-mail" aria-label="e-mail адрес" required>
             <button class="button button-subscribe" type="submit">Подписаться</button>
           </form>
         </section>
@@ -188,7 +186,7 @@
             <div class="form-search-date-wrapper">
               <label class="field-group-label" for="arival-date">Дата заезда:</label>
               <div class="date-input-wrapper">
-                <input class="field-group-input" type="text" id="arival-date" value="27 апреля 2020" required>
+                <input class="field-group-input" type="text" name="arival-date" id="arival-date" value="27 апреля 2020" required>
               </div>
 
               <p class="field-signature error-arival-date">Мы не можем отправить вас в прошлое</p>
@@ -197,7 +195,7 @@
             <div class="form-search-date-wrapper">
               <label class="field-group-label" for="date-of-departure">Дата выезда:</label>
               <div class="date-input-wrapper">
-                <input class="field-group-input" type="text" id="date-of-departure" value="1 сентября 2023" required>
+                <input class="field-group-input" type="text" name="departure-date" id="date-of-departure" value="1 сентября 2023" required>
               </div>
 
               <p class="field-signature description-date-of-departure">На эти даты есть свободные номера. Пока есть.</p>
@@ -209,7 +207,7 @@
                 <button class="button-change-quantity button-person-less" type="button">
                   <span class="visually-hidden">Меньше</span>
                 </button>
-                <input class="field-group-input" type="text" id="adults-input" value="2" required>
+                <input class="field-group-input" type="text" name="adults-quantity" id="adults-input" value="2" required>
                 <button class="button-change-quantity button-person-more" type="button">
                   <svg class="icon-button-more" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                     viewBox="0 0 14 14" fill="none">
@@ -224,13 +222,14 @@
                   <label class="field-group-label childs-person-label" for="childs-input">Дети:</label>
                   <span class="tooltip">
                     <button class="information-button" aria-labelledby="tooltip" type="button"></button>
-                    <span class="tooltip-text" id="tooltip" role="tooltip">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+                    <span class="tooltip-text" id="tooltip" role="tooltip">Укажите количество детей, которые будут с
+                      вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
                   </span>
                 </div>
                 <button class="button-change-quantity button-person-less" type="button">
                   <span class="visually-hidden">Меньше</span>
                 </button>
-                <input class="field-group-input" type="text" id="childs-input" value="2" required>
+                <input class="field-group-input" type="text" name="childs-quantity" id="childs-input" value="2" required>
                 <button class="button-change-quantity button-person-more" type="button">
                   <svg class="icon-button-more" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                     viewBox="0 0 14 14" fill="none">
