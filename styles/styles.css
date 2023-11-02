@@ -82,13 +82,13 @@ img {
   margin-right: 20px;
 }
 
-.navigation-user .navigation-item:first-child .navigation-link {
+.navigation-link-search {
   background-image: url("../images/icons/icon-search.svg");
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.navigation-user .navigation-item:last-child .navigation-link {
+.navigation-link-favorite {
   background-image: url("../images/icons/icon-favorites.svg");
   background-position: center;
   background-repeat: no-repeat;
