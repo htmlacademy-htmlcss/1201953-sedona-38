@@ -290,10 +290,6 @@ img {
   top: calc(100% + 30px);
 }
 
-/* .advantages-item:not(.advantages-item-large) .advantages-title::after {
-   top: 198px;
-} */
-
 .advantages-item-large .advantages-title::after {
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
@@ -919,6 +915,8 @@ img {
   border-radius: 4px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 21px 36px 37px;
+  grid-auto-rows: minmax(36px, auto);
   gap: 16px 20px;
   box-sizing: border-box;
   word-wrap: break-word;
@@ -971,9 +969,6 @@ img {
 .hotel-more-link,
 .hotel-favorite-button,
 .hotel-rating {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   max-width: 140px;
   justify-self: stretch;
   padding: 8px;
